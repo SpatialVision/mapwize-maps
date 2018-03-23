@@ -1,0 +1,11 @@
+.leaflet-label {
+	position: absolute;
+
+	font-size: 12px;
+	text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff;
+
+	white-space: nowrap;
+	z-index: 6;
+
+	pointer-events: none;
+}

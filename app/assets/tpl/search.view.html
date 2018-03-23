@@ -1,0 +1,98 @@
+<div id="searchResult" ng-class="{visible: searchData.showResults}">
+    <div id="searchTop"></div>
+
+    <div class="searchContent">
+        <div class="loading-bar" style="height: 5px;">
+            <div class="progress searchProgress" ng-class="{'inProgress': searchQueryProgress}">
+                <div class="progress-bar progress-bar-mwz-1 progress-bar-striped active" style="width:25%"></div>
+                <div class="progress-bar progress-bar-mwz-2 progress-bar-striped active" style="width:25%"></div>
+                <div class="progress-bar progress-bar-mwz-3 progress-bar-striped active" style="width:25%"></div>
+                <div class="progress-bar progress-bar-mwz-4 progress-bar-striped active" style="width:25%"></div>
+            </div>
+        </div>
+
+        <!-- No result card -->
+        <div class="text-center" style="padding: 20px" ng-show="searchData.query.length && !searchQueryProgress && emptySearchResult()">
+            <h5 translate="SEARCH.NO_RESULT"></h5>
+        </div>
+
+
+        <div class="ng-hide" ng-show="directionMode && !searchData.query.length" style="margin-top: 5px;margin-bottom: 5px;">
+            <div class="ng-hide" ng-show="($root.userPosition.floor || $root.userPosition.floor == 0)">
+                <div class="btn btn-block btn-default" translate="SEARCH.CURRENT_POSITION" ng-click="currentPositionClick()" style="border-radius: 0;border-right: none; border-left: none;"></div>
+            </div>
+            <div class="ng-hide text-center" ng-show="!$root.userPosition.floor && $root.userPosition.floor != 0">
+                <div class="item item-text-wrap" translate="SEARCH.NO_CURRENT_POSITION"></div>
+            </div>
+        </div>
+
+        <div ng-show="!searchData.query.length && !(searchData.mwzResults.length || searchData.googleResults.length)">
+            <div ng-if="lastFocusedField == 'searchInVenue'">
+                <mwz-main-places click="mainPlaceClicked" venue="$root.activeVenue"></mwz-main-places>
+            </div>
+            <div ng-if="lastFocusedField == 'from'">
+                <mwz-main-froms click="mainFromClicked" venue="$root.activeVenue"></mwz-main-froms>
+            </div>
+            <div ng-if="lastFocusedField == 'to'">
+                <mwz-main-places click="mainPlaceClicked" venue="$root.activeVenue"></mwz-main-places>
+            </div>
+        </div>
+
+        <!-- Search results -->
+        <div ng-show="!emptySearchResult()">
+            <div class="list-group" ng-if="!$root.activeVenue" style="margin-bottom: 5px;">
+
+                <!-- Mwz result search start -->
+                <!-- Venue result -->
+                <button type="button" class="list-group-item" style="min-height: 42px;" ng-repeat="resultElem in searchData.mwzResults" ng-if="resultElem.objectClass == 'venue'" ng-click="venueClick(resultElem);">
+                    <span style="float: right;width: 20px;text-align:center;"><i class="fa fa-building-o fa-lg" aria-hidden="true"></i></span>
+                    <img ng-src="{{resultElem.icon || 'https://www.mapwize.io/sdk/mapwize.js/images/venue-50.png'}}" style="width: 20px; height: 20px; float: left;" />
+                    <div style="padding-left: 35px;">
+                        {{$root.translate(resultElem.translations, resultElem.preferredLanguage, 'title')}}<span ng-show="$root.translate(resultElem.translations, resultElem.preferredLanguage, 'subTitle')" class="text-muted">&nbsp;-&nbsp;{{$root.translate(resultElem.translations, resultElem.preferredLanguage, 'subTitle')}}</span>
+                    </div>
+                </button>
+                <!-- Mwz result search end -->
+
+                <!-- Google addresses results -->
+                <button type="button" class="list-group-item" ng-if="searchData.googleResults.length" ng-repeat="addressElem in searchData.googleResults" ng-click="addressClick(addressElem);">
+                    <span style="width: 20px; height: 20px; float: left;text-align: center;">
+                        <i class="zmdi zmdi-google"></i>
+                    </span>
+                    <div style="padding-left: 35px;">
+                        {{addressElem.formatted_address}}
+                    </div>
+                </button>
+            </div>
+
+            <div class="list-group" ng-if="$root.activeVenue" style="margin-bottom: 5px;">
+
+                <div ng-repeat="(universeId, listOfElements) in searchData.mwzResults">
+                    <li class="list-group-item list-group-item-mapwize" ng-hide="universeId === $root.activeVenue.activeUniverse">{{$root.activeVenue.universesById[universeId].name}}</li>
+
+                    <!-- Mwz result search start -->
+                    <!-- Place result -->
+                    <button type="button" class="list-group-item" style="min-height: 62px;" ng-repeat-start="resultElem in listOfElements" ng-if="resultElem.objectClass == 'place'" ng-click="placeClick(resultElem, universeId);">
+                        <span style="float: right;width: 20px;text-align:center;position: relative; top: 10px;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+                        <img ng-src="{{resultElem.style.markerUrl || resultElem.placeType.style.markerUrl}}" style="width: 20px; height: 20px; float: left;position: relative; top: 10px;" />
+                        <div style="padding-left: 35px;">
+                            {{$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'title')}}<span ng-show="$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'subTitle')" class="text-muted">&nbsp;-&nbsp;{{$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'subTitle')}}</span><br />
+                            <span ng-show="resultElem.floor != null" class="text-muted"><span translate="SEARCH.FLOOR"></span> {{resultElem.floor}}</span>
+                        </div>
+                    </button>
+
+                    <!-- PlaceList result -->
+                    <button type="button" class="list-group-item" style="min-height: 62px;" ng-repeat-end ng-if="resultElem.objectClass == 'placeList'" ng-click="placeListClick(resultElem, universeId);">
+                        <span style="float: right;width: 20px;text-align:center;position: relative; top: 10px;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></span>
+                        <img ng-src="{{resultElem.icon}}" style="width: 20px; height: 20px; float: left;position: relative; top: 10px;" ng-show="resultElem.icon" />
+                        <div style="padding-left: 35px;">
+                            {{$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'title')}}<br />
+                            <span ng-show="$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'subTitle')" class="text-muted">{{$root.translate(resultElem.translations, resultElem.venue.preferredLanguage, 'subTitle')}}</span>&nbsp;
+                        </div>
+                    </button>
+                    <!-- Mwz result search end -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

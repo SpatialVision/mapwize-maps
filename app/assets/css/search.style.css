@@ -1,0 +1,94 @@
+#searchResult {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    background-color: white;
+
+    overflow: auto;
+
+}
+#searchResult.visible {
+    display: block;
+}
+@media (min-width: 768px) {
+    #searchResult {
+        top: 60px;
+        left: 10px;
+
+        width: 400px;
+        height: auto;
+        max-height: 50vh;
+
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+    }
+
+    #mapContainer.directionMode #searchResult {
+        top: 160px;
+    }
+}
+
+#searchResult .searchContent {
+    margin-top: 50px;
+}
+#mapContainer.directionMode #searchResult .searchContent {
+    margin-top: 150px;
+}
+@media (min-width: 768px) {
+    #searchResult .searchContent,
+    #mapContainer.directionMode #searchResult .searchContent {
+        margin-top: 0;
+    }
+}
+
+#searchResult .list-group .list-group-item {
+    border-left: none;
+    border-right: none;
+
+    border-radius: 0;
+}
+
+
+
+
+#searchResult .searchProgress {
+    -webkit-transition: height .25s ease;
+    -moz-transition: height .25s ease;
+    -ms-transition: height .25s ease;
+    -o-transition: height .25s ease;
+    transition: height .12s ease;
+
+    height: 0;
+
+    border-radius: 0;
+}
+#searchResult .searchProgress.inProgress {
+    height: 5px;
+}
+
+@media (max-width: 767px) {
+    #searchResult .list-group-item {
+        border-left: none;
+        border-right: none;
+    }
+    #searchResult .list-group-item:first-child, .search .list-group-item:last-child {
+        border-radius: 0;
+    }
+}
+
+#searchResult .list-group-item-mapwize {
+    background-color: #C51586;
+    color: white;
+
+    font-size: 14px;
+
+    padding: 5px 15px;
+}

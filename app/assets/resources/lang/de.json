@@ -1,0 +1,51 @@
+{
+  "MENU" : {
+    "ACCESS_KEY": "Zugangsschlüssel eingeben",
+    "ABOUT": "About Mapwize",
+    "CONTACT_US": "Kontaktieren Sie uns",
+    "CREDITS": "Kredite",
+    "ISACCESSIBLE": "Zugänglicher Wege",
+    "REVERSE": "Umkehren",
+    "LANGUAGE": "Sprache",
+    "UNIT": "Maßeinheiten",
+    "METER": "Meter",
+    "FEET": "Fuß"
+  },
+
+  "ACCESS_KEY": {
+    "ENTER_KEY_POPUP": {
+      "TITLE": "Zugangsschlüssel eingeben",
+      "SUBTITLE": "Zugangsschlüssels ermöglichen den Zugang zu privaten Gebäuden und werden von den Hausverwaltungen zur Verfügung gestellt."
+    },
+    "ERROR_INVALID" : "Dieser eingegebene Schlüssel ist ungültig",
+    "ERROR_VALID" : "Zugangsschlüssel eingegeben"
+  },
+
+  "SEARCH" : {
+    "NO_RESULT" : "Entschuldigung, keine Resultaten gefunden",
+    "CURRENT_POSITION" : "Aktuelle Position",
+    "COORDINATES": "Koordinaten",
+    "NO_CURRENT_POSITION" : "Aktuelle Position unbrauchbar",
+    "FLOOR" : "Stock"
+  },
+
+  "BUTTON" : {
+    "CANCEL" : "Abbrechen",
+    "SEND" : "Senden",
+    "SEARCH" : "Suchen",
+    "FROM" : "Von",
+    "TO" : "Zu"
+  },
+
+  "DIRECTION": {
+    "NO_RESULT": "Entschuldigung, keine Resultaten gefunden",
+    "ERROR_ENTER_MODE_MESSAGE": "Die Wegbeschreibung ist nur innerhalb der Standorte verfügbar. Klicken oder zoomen Sie bitte auf eine Stelle, um den Richtungsmodus zu aktivieren."
+  },
+
+  "MENUVENUE": {
+    "MAINPLACES": "Wichtigsten Standorte",
+    "VENUESETTINGS": "Standort Einstellung",
+    "UNIVERSE": "Universum",
+    "LANGUAGE": "Sprache"
+  }
+}

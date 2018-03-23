@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+.idea
+node_modules
+app/bower_components
+_backups
+.sass-cache
+.tmp
+
+# Public files
+public
+
+# Production files
+app/dist
+
+# Development files
+app/index.html
+
+app/assets/js/app.constants.js

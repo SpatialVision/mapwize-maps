@@ -1,0 +1,62 @@
+<div id="menuVenue">
+
+    <div id="menuVenue-header">
+        <div class="mwz-nav-bar-flex">
+            <a class="inner-container logo-container" ng-click="asideOpen();">
+                <img class="navbar-logo" src="assets/img/mapwizelogoapp.png" alt="Mapwize" />
+            </a>
+        </div>
+        <div class="mwz-header-flex">
+            <a class="inner-container logo-container" ng-click="$root.hideMenuVenue();">
+                <img class="mwz-header-logo" ng-src="{{$root.activeVenue.icon || $root.defaultIcon}}" alt="Mapwize" />
+            </a>
+        </div>
+        <div class="mwz-header-flex flex-elastic-width">
+            <div class="inner-container venue-title-container">{{$root.translate($root.activeVenue.translations, $root.activeVenue.preferredLanguage, 'title')}}</div>
+        </div>
+        <div class="mwz-header-flex">
+            <a class="inner-container icon-container close-direction-icon-container" ng-click="$root.hideMenuVenue();">
+                <i class="zmdi zmdi-close"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="menuVenue-container">
+        <!-- NEWS SECTION -->
+        <div id="menuVenue-details" ng-show="$root.translate($root.activeVenue.translations, $root.activeVenue.preferredLanguage, 'details');">
+            <div class="item item-text-wrap">
+                {{$root.translate($root.activeVenue.translations, $root.activeVenue.preferredLanguage, 'details')}}
+            </div>
+        </div>
+
+        <!-- MAIN PLACES SECTION -->
+        <mwz-main-places click="mainPlaceClicked" venue="$root.activeVenue" header="true"></mwz-main-places>
+
+        <!-- SETTINGS SECTION -->
+        <div id="menuVenue-settings" class="list-group" ng-show="$root.activeVenue.accessibleUniverses.length > 1 || $root.activeVenue.accessibleLanguages.length > 1">
+            <div class="list-group-item item-divider" translate>
+                MENUVENUE.VENUESETTINGS
+            </div>
+
+            <label class="list-group-item item-input item-select" ng-show="$root.activeVenue.accessibleUniverses.length > 1">
+                <div id="universes-section">
+                    <div class="input-label" translate>
+                        MENUVENUE.UNIVERSE
+                    </div>
+                    <select class="selectLanguage" ng-model="$root.activeVenue.activeUniverse">
+                        <option ng-repeat="universe in $root.activeVenue.accessibleUniverses" value="{{universe}}" ng-selected="universe == $root.activeVenue.activeUniverse">{{$root.activeVenue.universesById[universe].name}}</option>
+                    </select>
+                </div>
+            </label>
+
+            <label class="list-group-item item-input item-select" ng-show="$root.activeVenue.accessibleLanguages.length > 1">
+                <div class="input-label" translate>
+                    MENUVENUE.LANGUAGE
+                </div>
+                <select class="selectUniverse" ng-model="$root.activeVenue.activeLanguage">
+                    <option ng-repeat="language in $root.activeVenue.accessibleLanguages" value="{{language}}" ng-selected="language === $root.activeVenue.activeLanguage">{{$root.activeVenue.languagesByCode[language].nativeName}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+</div>

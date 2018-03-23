@@ -1,0 +1,13 @@
+<div class="list-group mwz-place-list" ng-show="venue.mainFroms.length > 0">
+    <button type="button" class="list-group-item mwz-place-item" ng-repeat="elem in venue.mainFroms" ng-click="clickOnElement(elem)">
+        <span class="mwz-item-icon mwz-place-icon">
+            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+        </span>
+        <img ng-src="{{elem.style.markerUrl || elem.placeType.style.markerUrl}}" class="mwz-item-image mwz-place-image" />
+        <div class="mwz-item-infos mwz-place-infos">
+            {{$root.translate(elem.translations, venue.defaultLanguage, 'title')}}
+            <span ng-show="$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')" class="text-muted">&nbsp;-&nbsp;{{$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')}}</span><br />
+            <span ng-show="elem.floor != null" class="text-muted"><span translate="SEARCH.FLOOR"></span> {{elem.floor}}</span>
+        </div>
+    </button>
+</div>

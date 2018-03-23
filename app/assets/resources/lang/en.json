@@ -1,0 +1,51 @@
+{
+  "MENU" : {
+    "ACCESS_KEY" : "Enter an access key",
+    "ABOUT" : "About Mapwize",
+    "CONTACT_US" : "Contact us",
+    "CREDITS" : "Credits",
+    "ISACCESSIBLE": "Accessible routes",
+    "REVERSE": "Reverse",
+    "LANGUAGE": "Language",
+    "UNIT": "Unit",
+    "METER": "Meter",
+    "FEET": "feet"
+  },
+
+  "ACCESS_KEY": {
+    "ENTER_KEY_POPUP": {
+      "TITLE": "Enter your access key",
+      "SUBTITLE": "Access keys allow you to view private buildings and are provided by building managers"
+    },
+    "ERROR_INVALID" : "This access key is not valid",
+    "ERROR_VALID" : "Access key added"
+  },
+
+  "SEARCH" : {
+    "NO_RESULT" : "Sorry, no result found",
+    "CURRENT_POSITION" : "Current position",
+    "COORDINATES": "Coordinates",
+    "NO_CURRENT_POSITION" : "Current position cannot be used",
+    "FLOOR" : "Floor"
+  },
+
+  "BUTTON" : {
+    "CANCEL" : "Cancel",
+    "SEND" : "Send",
+    "SEARCH" : "Search",
+    "FROM" : "From",
+    "TO" : "To"
+  },
+
+  "DIRECTION": {
+    "NO_RESULT": "Sorry, no result found",
+    "ERROR_ENTER_MODE_MESSAGE": "Directions are only available inside venues. Please enter a venue by clicking or zooming on it to enable directions."
+  },
+
+  "MENUVENUE": {
+    "MAINPLACES": "Main places",
+    "VENUESETTINGS": "Venue settings",
+    "UNIVERSE": "Universe",
+    "LANGUAGE": "Language"
+  }
+}

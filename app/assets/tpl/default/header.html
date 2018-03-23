@@ -1,0 +1,18 @@
+<div class="mwz-nav-bar-container" ng-class="{opaque: searchData.showResults}">
+    <div class="mwz-nav-bar-flex">
+        <a class="inner-container logo-container" ng-click="asideOpen();">
+            <img class="navbar-logo" src="assets/img/mapwizelogoapp.png" alt="Mapwize" />
+        </a>
+    </div>
+    <div class="mwz-nav-bar-flex flex-elastic-width">
+        <label class="inner-container search-field-container">
+            <input type="text" class="form-control" placeholder="{{ 'BUTTON.SEARCH' | translate }}" ng-focus="focusOnSearch();" ng-blur="blurOnSearch();" ng-model="searchData.query" />
+            <i class="zmdi zmdi-search" ng-show="!showSearch"></i>
+        </label>
+    </div>
+    <div class="mwz-nav-bar-flex ng-hide" ng-show="showSearch">
+        <a class="inner-container icon-container direction-icon-container" ng-click="showSearchResult(false, true);">
+            <i class="zmdi zmdi-close"></i>
+        </a>
+    </div>
+</div>

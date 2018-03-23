@@ -1,0 +1,51 @@
+{
+  "MENU" : {
+    "ACCESS_KEY": "Entrer une clé d'accès",
+    "ABOUT": "À propos de Mapwize",
+    "CONTACT_US": "Contactez-nous",
+    "CREDITS": "Crédits",
+    "ISACCESSIBLE": "Trajet accessible",
+    "REVERSE": "Inverser",
+    "LANGUAGE": "Langue",
+    "UNIT": "Unité de mesure",
+    "METER": "Mètre",
+    "FEET": "Pied"
+  },
+
+  "ACCESS_KEY": {
+    "ENTER_KEY_POPUP": {
+      "TITLE": "Entrez votre clé d'accès",
+      "SUBTITLE": "Les clés d'accès permettent de visualiser des bâtiments privés et sont fournies par les gestionnaires de ces bâtiments"
+    },
+    "ERROR_INVALID" : "Cette clé d'accès n'est pas valide",
+    "ERROR_VALID" : "Clé d'accès ajoutée"
+  },
+
+  "SEARCH" : {
+    "NO_RESULT" : "Désolé, aucun résultat n'a été trouvé",
+    "CURRENT_POSITION" : "Position actuelle",
+    "COORDINATES": "Coordonnées",
+    "NO_CURRENT_POSITION" : "Position actuelle inutilisable",
+    "FLOOR" : "Étage"
+  },
+
+  "BUTTON" : {
+    "CANCEL" : "Annuler",
+    "SEND" : "Envoyer",
+    "SEARCH" : "Recherche",
+    "FROM" : "De",
+    "TO" : "A"
+  },
+
+  "DIRECTION": {
+    "NO_RESULT": "Désolé, aucun résultat trouvé",
+    "ERROR_ENTER_MODE_MESSAGE": "Les directions ne sont disponibles qu'à l'intérieur des venues. Veuillez cliquer ou zoomer sur une venue pour y entrer et ainsi activer le mode direction."
+  },
+
+  "MENUVENUE": {
+    "MAINPLACES": "Principaux endroits",
+    "VENUESETTINGS": "Paramètres du lieu",
+    "UNIVERSE": "Univers",
+    "LANGUAGE": "Langue"
+  }
+}

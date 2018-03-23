@@ -1,0 +1,10 @@
+{
+  "API_KEY": "<API_KEY>",
+  "GOOGLE_API_KEY": "<GOOGLE_API_KEY>",
+  "SERVER_URL": "https://api.mapwize.io",
+
+  "MAPS_GA": "<GOOGLE_ANALYTICS_PROPERTY_FOR_MAPS>",
+  "SDK_GA": "<GOOGLE_ANALYTICS_PROPERTY_FOR_SDK>",
+
+  "BASE_URL": ""
+}

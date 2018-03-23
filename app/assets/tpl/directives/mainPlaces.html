@@ -1,0 +1,28 @@
+<div class="list-group mwz-place-list" ng-show="venue.mainPlaces.length > 0">
+    <div class="list-group-item item-divider" ng-if="header" translate>
+        MENUVENUE.MAINPLACES
+    </div>
+
+    <button type="button" class="list-group-item mwz-place-item" ng-repeat-start="elem in venue.mainPlaces" ng-if="elem.objectClass == 'place'" ng-click="clickOnElement(elem)">
+        <span class="mwz-item-icon mwz-place-icon">
+            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+        </span>
+        <img ng-src="{{elem.style.markerUrl || elem.placeType.style.markerUrl}}" class="mwz-item-image mwz-place-image" />
+        <div class="mwz-item-infos mwz-place-infos">
+            {{$root.translate(elem.translations, venue.defaultLanguage, 'title')}}
+            <span ng-show="$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')" class="text-muted">&nbsp;-&nbsp;{{$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')}}</span><br />
+            <span ng-show="elem.floor != null" class="text-muted"><span translate="SEARCH.FLOOR"></span> {{elem.floor}}</span>
+        </div>
+    </button>
+    <button type="button" class="list-group-item mwz-place-item" ng-repeat-end ng-if="elem.objectClass == 'placeList'" ng-click="clickOnElement(elem)">
+        <span class="mwz-item-icon mwz-place-icon">
+            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+        </span>
+        <img ng-src="{{elem.icon}}" class="mwz-item-image mwz-place-image" />
+        <div class="mwz-item-infos mwz-place-infos" style="height: 40px; line-height: 40px;">
+            {{$root.translate(elem.translations, venue.defaultLanguage, 'title')}}
+            <span ng-show="$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')" class="text-muted"> - {{$root.translate(elem.translations, venue.defaultLanguage, 'subTitle')}}</span>
+        </div>
+    </button>
+
+</div>

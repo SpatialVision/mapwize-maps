@@ -1,0 +1,41 @@
+.mwz-place-list {
+    margin-bottom: 5px;
+}
+
+.mwz-place-list .item-divider {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.mwz-place-list .item-divider, .mwz-place-list .mwz-place-item {
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+}
+.mwz-place-list .mwz-place-item {
+    min-height: 62px;
+}
+
+.mwz-place-list .mwz-place-item .mwz-item-icon {
+    position: relative;
+    top: 10px;
+
+    float: right;
+
+    width: 20px;
+
+    text-align:center;
+}
+
+.mwz-place-list .mwz-place-item .mwz-item-image {
+    position: relative;
+    top: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    float: left;
+}
+
+.mwz-place-list .mwz-place-item .mwz-item-infos {
+    padding-left: 35px;
+}

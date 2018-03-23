@@ -1,0 +1,215 @@
+.menu-controller {
+    position: fixed;
+    z-index: 1000;
+}
+
+.menu {
+    position: fixed;
+}
+
+.menu .menu-container {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 4px;
+}
+
+.menu.menu-bottom {
+    bottom: 0;
+}
+.menu.menu-bottom .menu-container {
+    margin-bottom: 10px;
+}
+
+.menu.menu-top {
+    top: 0;
+}
+.menu.menu-top .menu-container {
+    margin-top: 10px;
+}
+
+.menu.menu-left {
+    left: 0;
+}
+.menu.menu-left .menu-container {
+    margin-left: 10px;
+}
+
+.menu.menu-right {
+    right: 0;
+}
+.menu.menu-right .menu-container {
+    margin-right: 10px;
+}
+
+/* Centrage horizontal */
+.menu.menu-top.menu-center, .menu.menu-bottom.menu-center {
+    width: 50px;
+
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+}
+/* Centrage verticale */
+.menu.menu-left.menu-center, .menu.menu-right.menu-center {
+    top: 25%;
+
+    max-height: 50%;
+}
+.menu.menu-left.menu-center .menu-container, .menu.menu-right.menu-center .menu-container {
+    width: 50px;
+}
+
+.menu .menu-open {
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 4px;
+
+    text-align: center;
+    line-height: 53px;
+    font-size: 25px;
+    color: black;
+
+    background-color: #fff;
+}
+
+.menu .menu-open:hover {
+    background-color: #f4f4f4;
+
+    cursor: pointer;
+}
+
+.menu .menu-content {
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+
+    position: fixed;
+
+    height: 0;
+    width: 500px;
+
+    max-height: 50%;
+    max-width: 90%;
+
+    left: 0;
+    right: 0;
+    bottom: 60px;
+
+    margin: 0 auto;
+
+    opacity: 0;
+    background-color: #fff;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 4px;
+}
+.menu .menu-content.showMenu {
+    height: 200px;
+
+    bottom: 70px;
+
+    opacity: 1;
+}
+
+.menu.menu-floors {
+    position: fixed;
+
+    top: 50%;
+    right: 10px;
+
+    width: 50px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 4px;
+}
+.menu.menu-floors::-webkit-scrollbar {
+    display: none;
+}
+.menu .menu-floor {
+    width: 50px;
+    height: 50px;
+
+    background-color: #fff;
+
+    line-height: 50px;
+    text-align: center;
+
+    border-bottom: 1px solid #ccc;
+}
+.menu .menu-floor:hover {
+    cursor: pointer;
+}
+
+.menu.menu-floors .floorSelected {
+    background-color: #ddd;
+}
+
+
+.menu-track .inTrack {
+    color: #c72484;
+}
+
+/* ---- ---- ---- ---- */
+/* mobile */
+
+body.isMobile .menu.menu-top.menu-center, body.isMobile .menu.menu-bottom.menu-center {
+    width: 44px;
+}
+body.isMobile .menu.menu-left.menu-center .menu-container, body.isMobile .menu.menu-right.menu-center .menu-container {
+    width: 44px;
+}
+
+
+body.isMobile .menu.menu-bottom .menu-container {
+    margin-bottom: 10px;
+}
+
+body.isMobile .menu .menu-container {
+    box-shadow: none;
+
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
+body.isMobile .menu .menu-open {
+    width: 40px;
+    height: 40px;
+
+    line-height: 43px;
+    font-size: 20px;
+}
+
+body.isMobile .menu .menu-content {
+    max-width: 70%;
+
+    bottom: 60px;
+
+    box-shadow: none;
+
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
+
+body.isMobile .menu.menu-floors {
+    width: 44px;
+
+    box-shadow: none;
+
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+body.isMobile .menu .menu-floor {
+    width: 40px;
+    height: 40px;
+
+    line-height: 40px;
+}

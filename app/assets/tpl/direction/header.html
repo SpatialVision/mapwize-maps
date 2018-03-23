@@ -1,0 +1,54 @@
+<div class="mwz-nav-bar-container direction-container" ng-class="{opaque: searchData.showResults}" ng-init="initMenu();">
+    <div class="direction-line direction-header-line">
+        <div class="mwz-nav-bar-flex">
+            <a class="inner-container logo-container" ng-click="asideOpen();">
+                <img class="navbar-logo" src="assets/img/mapwizelogoapp.png" alt="Mapwize" />
+            </a>
+        </div>
+        <div class="mwz-nav-bar-flex">
+            <a class="inner-container logo-container" ng-click="">
+                <img class="navbar-logo" ng-src="{{$root.activeVenue.icon || $root.defaultIcon}}" alt="Mapwize" />
+            </a>
+        </div>
+        <div class="mwz-nav-bar-flex flex-elastic-width">
+            <div class="inner-container venue-title-container">{{$root.translate($root.activeVenue.translations, $root.activeVenue.preferredLanguage, 'title')}}</div>
+        </div>
+        <div class="mwz-nav-bar-flex">
+            <a class="inner-container icon-container toggle-options-icon-container" ng-click="toggleOptions();">
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
+        </div>
+        <div class="mwz-nav-bar-flex">
+            <a class="inner-container icon-container close-direction-icon-container" ng-click="goToSearchMode();">
+                <i class="zmdi zmdi-close"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="direction-line direction-from-line">
+        <div class="mwz-nav-bar-flex">
+            <div class="inner-container icon-container from-icon-container">
+                <i class="zmdi zmdi-gps-dot"></i>
+            </div>
+        </div>
+        <div class="mwz-nav-bar-flex flex-elastic-width">
+            <label class="inner-container search-field-container">
+                <input id="directionFromField" type="text" class="form-control" placeholder="{{ 'BUTTON.FROM' | translate}}" ng-focus="focusOnFrom();" ng-blur="blurOnFrom();" ng-model="$root.directionRequest.from.toShow" />
+                <i class="zmdi zmdi-search"></i>
+            </label>
+        </div>
+    </div>
+    <div class="direction-line direction-to-line">
+        <div class="mwz-nav-bar-flex">
+            <div class="inner-container icon-container to-icon-container">
+                <i class="zmdi zmdi-pin"></i>
+            </div>
+        </div>
+        <div class="mwz-nav-bar-flex flex-elastic-width">
+            <label class="inner-container search-field-container">
+                <input id="directionToField" type="text" class="form-control" placeholder="{{ 'BUTTON.TO' | translate}}" ng-focus="focusOnTo();" ng-blur="blurOnTo();" ng-model="$root.directionRequest.to.toShow" />
+                <i class="zmdi zmdi-search"></i>
+            </label>
+        </div>
+    </div>
+</div>

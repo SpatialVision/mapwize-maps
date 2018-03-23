@@ -1,0 +1,51 @@
+{
+  "MENU" : {
+    "ACCESS_KEY": "Toegangsleutel invoegen",
+    "ABOUT": "About Mapwize",
+    "CONTACT_US": "Contact met ons opnemen",
+    "CREDITS": "Kredieten",
+    "ISACCESSIBLE": "Toegankelijke routes",
+    "REVERSE": "Keren",
+    "LANGUAGE": "Taal",
+    "UNIT": "Meeteenheid",
+    "METER": "Meter",
+    "FEET": "Voet"
+  },
+
+  "ACCESS_KEY": {
+    "ENTER_KEY_POPUP": {
+      "TITLE": "Voer uw Toegangsleutel in",
+      "SUBTITLE": "Met toegangssleutels kunt u privégebouwen bekijken en deze worden door gebouwbeheerders geleverd"
+    },
+    "ERROR_INVALID" : "Ongeldige toegangssleutel",
+    "ERROR_VALID" : "Toegangssleutel toegevoegd"
+  },
+
+  "SEARCH" : {
+    "NO_RESULT" : "Sorry, geen resultaat gevonden",
+    "CURRENT_POSITION" : "Huidige positie",
+    "COORDINATES": "Coördinaten",
+    "NO_CURRENT_POSITION" : "Huidige positie onbruikbaar",
+    "FLOOR" : "Verdieping"
+  },
+
+  "BUTTON" : {
+    "CANCEL" : "Annuleren",
+    "SEND" : "Sturen",
+    "SEARCH" : "Zoeken",
+    "FROM" : "Van",
+    "TO" : "Naar"
+  },
+
+  "DIRECTION": {
+    "NO_RESULT": "Sorry, geen resultaat gevonden",
+    "ERROR_ENTER_MODE_MESSAGE": "De richtingen zijn alleen beschikbaar binnen de locaties. Klik maar of zoom in op een plaats om binnen te komen en het richtingmodus te activeren."
+  },
+
+  "MENUVENUE": {
+    "MAINPLACES": "Belangrijkste locaties",
+    "VENUESETTINGS": "Locatie instelling",
+    "UNIVERSE": "Universum",
+    "LANGUAGE": "Taal"
+  }
+}

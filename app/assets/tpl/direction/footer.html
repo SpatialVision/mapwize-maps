@@ -1,0 +1,9 @@
+<div id="infosDirection" class="infosBar" ng-show="$root.directionRequest.direction">
+    <div class="infosCol infosTime">
+        <i class="zmdi zmdi-time"></i> {{$root.directionRequest.direction.traveltime | secToMin}}
+    </div>
+    <div class="infosCol infosDistance">
+        <i class="" ng-class="{'fa fa-wheelchair': $root.isAccessible, 'zmdi zmdi-walk': !$root.isAccessible}"></i> {{$root.directionRequest.direction.distance | meterToKilometer}}
+    </div>
+
+</div>

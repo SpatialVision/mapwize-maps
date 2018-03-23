@@ -1,0 +1,12 @@
+<div id="options" ng-class="{visible: showOptionsBar}">
+    <div class="list-group" style="margin-bottom: 0;">
+        <button type="button" class="list-group-item" ng-click="reverse();" style="border-radius: 0;">
+            <span class="pull-right" style="font-size: 18px;"><i class="zmdi zmdi-swap-vertical"></i></span>
+            {{'MENU.REVERSE' | translate}}
+        </button>
+        <button type="button" class="list-group-item" ng-click="$root.toggleIsAccessible()" style="border-radius: 0;">
+            <span class="pull-right" ng-class="{'text-success': $root.isAccessible, 'text-danger': !$root.isAccessible}">{{$root.isAccessible ? 'ON' : 'OFF'}}</span>
+            {{'MENU.ISACCESSIBLE' | translate}}
+        </button>
+    </div>
+</div>

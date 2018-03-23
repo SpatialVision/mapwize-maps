@@ -1,0 +1,110 @@
+#mapContainer.directionMode #mwz-nav-bar {
+    height: 150px;
+}
+
+/* ---- ---- ---- ---- */
+
+#mwz-nav-bar .mwz-nav-bar-container.direction-container {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+
+#mwz-nav-bar .mwz-nav-bar-container .direction-line {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    overflow: hidden;
+}
+
+/* ---- ---- ---- ---- */
+
+#mwz-nav-bar .mwz-nav-bar-container .direction-header-line {
+    height: 46px;
+}
+
+#mwz-nav-bar .mwz-nav-bar-container .direction-header-line .venue-title-container {
+    font-size: 16px;
+    line-height: 34px;
+    padding: 6px 12px;
+}
+
+/* ---- ---- ---- ---- */
+
+#mwz-nav-bar .mwz-nav-bar-container .direction-from-line {
+    height: 50px;
+}
+#mwz-nav-bar .mwz-nav-bar-container .direction-from-line .search-field-container {
+    flex: 1 0;
+}
+#mwz-nav-bar .mwz-nav-bar-container .direction-from-line .from-icon-container {
+    width: 46px;
+
+    color: #999;
+
+    font-size: 18px;
+    line-height: 40px;
+}
+
+/* ---- ---- ---- ---- */
+
+#mwz-nav-bar .mwz-nav-bar-container .direction-to-line {
+    height: 50px;
+}
+#mwz-nav-bar .mwz-nav-bar-container .direction-to-line .search-field-container {
+    flex: 1 0;
+}
+#mwz-nav-bar .mwz-nav-bar-container .direction-to-line .to-icon-container {
+    width: 46px;
+
+    color: #999;
+
+    font-size: 18px;
+    line-height: 40px;
+}
+
+/* ---- ---- ---- ---- */
+
+#options {
+    display: none;
+
+    position: fixed;
+
+    top: 150px;
+    left: 0;
+
+    width: 100%;
+
+    z-index: -1;
+
+    background-color: white;
+
+    overflow: auto;
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+
+}
+#options.visible {
+    display: block;
+}
+@media (min-width: 768px) {
+    #options {
+        top: 160px;
+        left: 10px;
+
+        width: 400px;
+    }
+}
+
+#infosDirection .infosCol {
+    flex: 1 0;
+
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+}

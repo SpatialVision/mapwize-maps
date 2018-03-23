@@ -1,0 +1,156 @@
+
+
+/* ---- ---- ---- ---- */
+
+.infosBar {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 50px;
+
+    z-index: 10000;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    overflow: hidden;
+
+    background-color: white;
+    border-top: 4px solid #C51586;
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02);
+
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .infosBar {
+        bottom: 10px;
+        left: 10px;
+
+        width: 400px;
+    }
+}
+
+.infosBar.extended {
+    height: 150px;
+}
+
+/* ---- ---- ---- ---- */
+
+.infosBar .infosCol {
+    height: 100%;
+}
+.infosBar .infosCol.infosTitre {
+    flex: 1 0;
+}
+
+/* Language and universe selector addon */
+.infosBar .infosCol.infosLanguage {
+    flex: 1 0;
+}
+.infosBar .infosCol.infosUniverse {
+    flex: 2 0;
+}
+
+/* ---- ---- ---- ---- */
+
+.infosBar .infosImage img {
+    margin: 10px;
+    height: 26px;
+}
+
+/* ---- ---- ---- ---- */
+
+.infosBar .infosTitre {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    flex-direction: column;
+
+    line-height: 23px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.infosBar .infosTitre.noSubtitle {
+    line-height: 46px;
+}
+.infosBar .infosTitre .titleInfos {
+    font-size: 18px;
+}
+.infosBar.extended .infosTitre .titleInfos {
+    line-height: 46px;
+    font-size: 20px;
+}
+.infosBar .infosTitre .subTitleInfos {
+    font-size: 15px;
+}
+.infosBar.extended .infosTitre .subTitleInfos {
+    white-space: normal;
+
+    overflow: auto;
+}
+
+/* ---- ---- ---- ---- */
+
+.infosBar .infosDirection a, .infosBar .infosDetails a {
+    display: block;
+
+    padding: 5px 11px;
+
+    text-align: center;
+    font-size: 26px;
+}
+
+/* ---- ---- ---- ---- */
+/* Language and universe selector addon */
+
+.infosBar .infosCol.infosSelect {
+    position: relative;
+}
+.infosBar .infosCol.infosSelect.separator {
+    border-right: 1px solid #DDD;
+}
+.infosBar .infosCol.infosSelect select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding: 12px 15px 12px 15px;
+    width: 100%;
+
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 15px;
+    cursor: pointer;
+    /*direction: rtl;*/
+}
+.infosBar .infosCol.infosSelect:after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #999;
+    content: "";
+    pointer-events: none;
+}

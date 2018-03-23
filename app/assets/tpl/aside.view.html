@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <img src="assets/img/mapwizelogo.png" style="width: 270px;" />
+</div>
+<div class="modal-body asside-body" style="padding: 0;">
+    <div class="list-group">
+        <button type="button" class="list-group-item" ng-click="askAccessKey();"><i class="fa fa-unlock-alt fa-lg text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.ACCESS_KEY</span></button>
+    </div>
+
+    <div class="list-group">
+        <a href="https://www.mapwize.io" target="_blank" class="list-group-item"><i class="fa fa-info-circle fa-lg text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.ABOUT</span></a>
+        <a href="mailto:contact@mapwize.io" class="list-group-item"><i class="fa fa-envelope-o fa-lg text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.CONTACT_US</span></a>
+    </div>
+
+    <div class="list-group">
+        <li class="list-group-item">
+            <i class="fa fa-wheelchair fa-lg text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.ISACCESSIBLE</span> <switch name="isAccessible" ng-model="$root.isAccessible" class="pull-right"></switch>
+        </li>
+        <li class="list-group-item">
+            <i class="fa fa-language fa-lg text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.LANGUAGE</span>&nbsp;
+            <select name="appLanguage" ng-model="$root.appLanguage" class="pull-right">
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="nl">Nederlands</option>
+            </select>
+        </li>
+        <li class="list-group-item">
+            <i class="zmdi zmdi-ruler text-center" style="width:20px;"></i>&nbsp;<span translate>MENU.UNIT</span>&nbsp;
+            <select name="appUnit" ng-model="$root.appUnit" class="pull-right">
+                <option value="ft">{{ "MENU.FEET" | translate}}</option>
+                <option value="t">{{ "MENU.METER" | translate}}</option>
+            </select>
+        </li>
+    </div>
+
+</div>
+<div class="text-center">
+    <p>V. {{$root.APP.version}}<br />
+    &copy; 2017 Contexeo SAS</p>
+
+    <a href="/credits.html" target="_blank" translate>MENU.CREDITS</a>
+</div>

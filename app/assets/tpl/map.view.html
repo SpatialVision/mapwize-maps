@@ -1,0 +1,21 @@
+<div id="mapContainer" class="mapContainer" ng-class="{'showInfos': $root.selectedElement, 'directionMode': $root.activeVenue && directionMode}">
+
+    <nav id="mwz-nav-bar" ng-controller="MainHeaderCtrl">
+        <ng-include src="'assets/tpl/default/header.html'" ng-controller="DefaultHeaderCtrl" ng-if="!$root.activeVenue"></ng-include>
+        <ng-include src="'assets/tpl/venue/header.html'" ng-controller="VenueHeaderCtrl" ng-if="$root.activeVenue && !directionMode"></ng-include>
+        <ng-include src="'assets/tpl/direction/header.html'" ng-controller="DirectionHeaderCtrl" ng-if="$root.activeVenue && directionMode"></ng-include>
+
+        <ng-include src="'assets/tpl/search.view.html'" ng-controller="SearchCtrl"></ng-include>
+        <ng-include src="'assets/tpl/direction/options.html'" ng-controller="OptionsCtrl" ng-if="$root.activeVenue && directionMode"></ng-include>
+    </nav>
+
+    <div id="map"></div>
+
+    <ng-include src="'assets/tpl/menuVenue.view.html'" ng-controller="MenuVenueCtrl" ng-if="$root.activeVenue && !directionMode && $root.displayMenuVenue"></ng-include>
+
+    <ng-include src="'assets/tpl/default/footer.html'" ng-controller="DefaultFooterCtrl" ng-if="!$root.activeVenue"></ng-include>
+    <ng-include src="'assets/tpl/venue/footer.html'" ng-controller="VenueFooterCtrl" ng-if="$root.activeVenue && !directionMode"></ng-include>
+    <ng-include src="'assets/tpl/direction/footer.html'" ng-controller="DirectionFooterCtrl" ng-if="$root.activeVenue && directionMode"></ng-include>
+
+</div>
+

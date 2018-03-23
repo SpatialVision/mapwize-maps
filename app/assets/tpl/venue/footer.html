@@ -1,0 +1,45 @@
+<div class="infosBar" ng-show="$root.selectedElement" ng-click="centerOnPlace($root.selectedElement);" ng-class="{extended: needExtendedBar($root.selectedElement)}">
+
+    <div class="infosCol infosImage" ng-show="$root.selectedElement.style.markerUrl || $root.selectedElement.placeType.style.markerUrl || $root.selectedElement.icon">
+        <img class="infosImg" ng-src="{{$root.selectedElement.style.markerUrl || $root.selectedElement.placeType.style.markerUrl || $root.selectedElement.icon }}" />
+    </div>
+    <div class="infosCol infosTitre" ng-class="{'noSubtitle': !$root.translate($root.selectedElement.translations, $root.selectedElement.venue.preferredLanguage, 'subTitle')}">
+        <div class="titleInfos">{{$root.translate($root.selectedElement.translations, $root.selectedElement.venue.preferredLanguage, 'title')}}</div>
+        <div class="subTitleInfos" ng-show="$root.translate($root.selectedElement.translations, $root.selectedElement.venue.preferredLanguage, 'subTitle')">{{$root.translate($root.selectedElement.translations, $root.selectedElement.venue.preferredLanguage, 'subTitle')}}</div>
+    </div>
+    <div class="infosCol infosDetails" ng-if="$root.translate($root.selectedElement.translations, $root.selectedElement.venue.preferredLanguage, 'hasDetails');">
+        <a ng-click="openDetails($root.selectedElement); $event.stopPropagation();">
+            <i class="zmdi zmdi-info"></i>
+        </a>
+    </div>
+    <div class="infosCol infosDirection">
+        <a ng-click="goToDirectionMode(); $event.stopPropagation();">
+            <i class="zmdi zmdi-turning-sign"></i>
+        </a>
+    </div>
+
+</div>
+
+<div class="infosBar" ng-show="!$root.selectedElement && ($root.activeVenue.accessibleUniverses.length > 1 || $root.activeVenue.accessibleLanguages.length > 1)">
+
+    <label class="infosCol infosSelect infosLanguage" ng-if="$root.activeVenue.accessibleLanguages.length > 1" ng-class="{separator: ($root.activeVenue.accessibleUniverses.length > 1 && $root.activeVenue.accessibleLanguages.length > 1)}">
+        <select class="selectLanguage" ng-model="$root.activeVenue.activeLanguage">
+            <option ng-repeat="language in $root.activeVenue.accessibleLanguages" value="{{language}}" ng-selected="language === $root.activeVenue.activeLanguage">{{$root.activeVenue.languagesByCode[language].nativeName}}</option>
+        </select>
+    </label>
+    <label class="infosCol infosSelect infosUniverse"  ng-if="$root.activeVenue.accessibleUniverses.length > 1">
+        <select class="selectUniverse" ng-model="$root.activeVenue.activeUniverse">
+            <option ng-repeat="universe in $root.activeVenue.accessibleUniverses" value="{{universe}}" ng-selected="universe == $root.activeVenue.activeUniverse">{{$root.activeVenue.universesById[universe].name}}</option>
+        </select>
+    </label>
+
+</div>
+
+<script type="text/ng-template" id="detailsModal.html">
+    <div class="modal-body" style="padding:5px;">
+        <iframe ng-src="{{detailsUrl}}" style="width: 100%; height: 500px;"></iframe>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="close()">Close</button>
+    </div>
+</script>

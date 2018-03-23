@@ -1,0 +1,23 @@
+<div class="mwz-nav-bar-container in-venue" ng-class="{opaque: searchData.showResults}">
+    <div class="mwz-nav-bar-flex">
+        <a class="inner-container logo-container" ng-click="asideOpen();">
+            <img class="navbar-logo" src="assets/img/mapwizelogoapp.png" alt="Mapwize" />
+        </a>
+    </div>
+    <div class="mwz-nav-bar-flex">
+        <a class="inner-container logo-container" ng-click="$root.showMenuVenue();">
+            <img class="navbar-logo" ng-src="{{$root.activeVenue.icon || $root.defaultIcon}}" alt="Mapwize" />
+        </a>
+    </div>
+    <div class="mwz-nav-bar-flex flex-elastic-width">
+        <label class="inner-container search-field-container">
+            <input type="text" class="form-control" placeholder="{{ 'BUTTON.SEARCH' | translate }}" ng-focus="focusOnSearch();" ng-blur="blurOnSearch();" ng-model="searchData.query" />
+            <i class="zmdi zmdi-search"></i>
+        </label>
+    </div>
+    <div class="mwz-nav-bar-flex">
+        <a class="inner-container icon-container direction-icon-container" ng-click="goToDirectionMode();">
+            <i class="zmdi zmdi-turning-sign"></i>
+        </a>
+    </div>
+</div>

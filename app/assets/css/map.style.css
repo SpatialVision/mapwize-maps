@@ -1,0 +1,256 @@
+a[ng-click] {
+    cursor: pointer;
+}
+a {
+    color: #C51586;
+}
+a:hover {
+    color: #9B1384;
+    cursor: pointer;
+}
+
+/* ---- ---- ---- ---- */
+
+#loadingPage {
+    position: fixed;
+
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    text-align:center;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+#loadingPage.ng-hide {
+    opacity:0;
+}
+#loadingPage #loadingContent {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100%;
+}
+
+/* ---- ---- ---- ---- */
+
+.leaflet-bar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02);
+
+    border-radius: 0;
+}
+.leaflet-touch .leaflet-bar {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.02);
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+    border-bottom: 1px solid #eee;
+}
+.leaflet-bar a.selectedFloor,
+.leaflet-bar a.selectedFloor:hover {
+    border-bottom: none;
+}
+.leaflet-bar a:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.leaflet-bar a:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    border-bottom: none !important;
+}
+
+/* ---- ---- ---- ---- */
+
+.leaflet-bar a.selectedFloor {
+    background-color: #C51586;
+    color: white !important;
+}
+
+.leaflet-bar a.hasDirection {
+    border-right: 3px solid transparent;
+}
+.leaflet-bar a.selectedFloor.hasDirection {
+    border-left: 3px solid #C51586;
+}
+
+/* ---- ---- ---- ---- */
+
+.mapContainer {
+    position: fixed;
+
+    height: 100%;
+    width: 100%;
+
+    /*padding-top: 50px;*/
+}
+
+.mapContainer .navbar {
+    background-color: rgba(248, 248, 248, 0.5);
+}
+.mapContainer .navbar .form-control {
+    border-color: #ddd;
+}
+
+.mapContainer .navbar .navbar-logo {
+    height: 50px;
+}
+@media (max-width: 767px) {
+    .mapContainer .navbar .navbar-logo {
+        padding-top: 5px;
+        height: 45px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mapContainer .navbar .fixPaddingLeft {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.mapContainer .navbar .navbar-margin {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+#map .selectedLabel {
+    color: red;
+}
+
+.mapwizeNavbar {
+    z-index: 11000;
+}
+
+/* ---- ---- ---- ---- */
+
+.asside-body .list-group-item {
+    border-radius: 0;
+}
+
+/* ---- ---- ---- ---- */
+/* Search */
+
+
+.progress-bar-mwz-1 {
+    background-color: #F23196;
+}
+.progress-bar-mwz-2 {
+    background-color: #C51586;
+}
+.progress-bar-mwz-3 {
+    background-color: #9B1384;
+}
+.progress-bar-mwz-4 {
+    background-color: #711083;
+}
+
+
+/* ---- ---- ---- ---- */
+/* mobile */
+
+@media (max-width: 767px) {
+    .logo {
+        left: 10px;
+    }
+}
+
+
+
+/* ---- ---- ---- ---- */
+/* ---- ---- ---- ---- */
+
+.switch {
+    height: 20px;
+    width: 42px;
+}
+.switch small {
+    height: 20px;
+    width: 20px;
+}
+
+/* ---- ---- ---- ---- */
+/* ---- ---- ---- ---- */
+
+.btn-mapwize {
+    color: #fff;
+    background-color: #C51586;
+    border-color: #AA1273;
+}
+.btn-mapwize:focus,
+.btn-mapwize.focus {
+    color: #fff;
+    background-color: #AA1273;
+    border-color: #930F63;
+}
+.btn-mapwize:hover {
+    color: #fff;
+    background-color: #AA1273;
+    border-color: #930F63;
+}
+.btn-mapwize:active,
+.btn-mapwize.active,
+.open > .dropdown-toggle.btn-mapwize {
+    color: #fff;
+    background-color: #AA1273;
+    border-color: #930F63;
+}
+.btn-mapwize:active:hover,
+.btn-mapwize.active:hover,
+.open > .dropdown-toggle.btn-mapwize:hover,
+.btn-mapwize:active:focus,
+.btn-mapwize.active:focus,
+.open > .dropdown-toggle.btn-mapwize:focus,
+.btn-mapwize:active.focus,
+.btn-mapwize.active.focus,
+.open > .dropdown-toggle.btn-mapwize.focus {
+    color: #fff;
+    background-color: #AA1273;
+    border-color: #930F63;
+}
+.btn-mapwize:active,
+.btn-mapwize.active,
+.open > .dropdown-toggle.btn-mapwize {
+    background-image: none;
+}
+.btn-mapwize.disabled,
+.btn-mapwize[disabled],
+fieldset[disabled] .btn-mapwize,
+.btn-mapwize.disabled:hover,
+.btn-mapwize[disabled]:hover,
+fieldset[disabled] .btn-mapwize:hover,
+.btn-mapwize.disabled:focus,
+.btn-mapwize[disabled]:focus,
+fieldset[disabled] .btn-mapwize:focus,
+.btn-mapwize.disabled.focus,
+.btn-mapwize[disabled].focus,
+fieldset[disabled] .btn-mapwize.focus,
+.btn-mapwize.disabled:active,
+.btn-mapwize[disabled]:active,
+fieldset[disabled] .btn-mapwize:active,
+.btn-mapwize.disabled.active,
+.btn-mapwize[disabled].active,
+fieldset[disabled] .btn-mapwize.active {
+    background-color: #C51586;
+    border-color: #AA1273;
+}
+.btn-mapwize .badge {
+    color: #C51586;
+    background-color: #fff;
+}

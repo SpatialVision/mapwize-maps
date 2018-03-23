@@ -1,0 +1,10 @@
+commit 97cf71a2ccf987266a77951d128ec52cebd786f5
+Merge: 3d102d2 8eb61a6
+Author: Mathieu Gérard <mathieu@mapwize.io>
+Date:   Fri Dec 8 09:48:16 2017 +0000
+
+    Merge branch 'develop' into 'master'
+    
+    2.4.0
+    
+    See merge request mapwize/mapwize.js!295
